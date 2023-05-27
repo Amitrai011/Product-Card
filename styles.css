@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --app-color: #b3e140;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 320px;
+  height: 450px;
+  background-color: var(--app-color);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .imgContainer {
+  width: 100%;
+  height: 220px;
+  position: absolute;
+  top: 50%;
+  transition: 0.5s;
+  transform: translateY(-50%);
+}
+
+.card:hover .imgContainer {
+  top: 0%;
+  transform: translateY(0%);
+}
+
+.imgContainer img {
+  width: 300px;
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+.card .content {
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  transition: 1s;
+}
+
+.card:hover .content {
+  height: 210px;
+}
+
+.content h2 {
+  position: relative;
+  font-weight: 600;
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.content .size,
+.content .colors {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  visibility: hidden;
+  padding: 8px 20px;
+}
+
+.content .size h3,
+.content .colors h3 {
+  color: white;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card:hover .size {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.card:hover .colors {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.content .size span {
+  display: inline-block;
+  color: black;
+  background: white;
+  font-size: 0.8rem;
+  width: 26px;
+  height: 26px;
+  line-height: 1.6rem;
+  margin: 0 5px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.content .size span:hover {
+  background-color: black;
+  color: white;
+}
+
+.content .colors span {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #ff0;
+}
+
+.content .colors span:nth-child(2) {
+  background-color: #ff7675;
+}
+
+.content .colors span:nth-child(3) {
+  background-color: #0984e3;
+}
+
+.content .colors span:nth-child(4) {
+  background-color: #d63031;
+}
+
+.content a {
+  opacity: 0;
+  color: black;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: 0.5s;
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background-color: white;
+  text-decoration: none;
+  transform: translateY(3.125rem);
+}
+
+.card:hover a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.75s;
+}
